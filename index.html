@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charming Home for Sale in Lake Pine in Medford, NJ</title>
+    <style>
+        /* --- Basic Setup & Fonts --- */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap');
+
+        :root {
+            --primary-color: #2c3e50; /* Dark Blue-Gray */
+            --secondary-color: #3498db; /* Bright Blue */
+            --accent-color: #ffffff; /* White */
+            --text-color: #34495e; /* Softer Gray */
+            --light-gray-bg: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--accent-color);
+        }
+
+        /* --- Page Structure & Containers --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            padding: 40px 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        /* --- Header & Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+            color: var(--accent-color);
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin: 0 0 10px 0;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin: 0;
+        }
+
+        .price-banner {
+            background-color: var(--secondary-color);
+            color: var(--accent-color);
+            padding: 20px;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        /* --- General Typography & Elements --- */
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--accent-color);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        /* --- Photo Gallery --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* --- Property Details & Features --- */
+        .details-features-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .details, .features {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        #details ul, #features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #details li, #features li {
+            font-size: 1.1rem;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        #features li {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%233498db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>') no-repeat left center;
+            padding-left: 40px;
+        }
+
+        #details li strong {
+            color: var(--primary-color);
+        }
+
+        /* --- Description Section --- */
+        #description {
+            background-color: var(--light-gray-bg);
+            text-align: center;
+        }
+        
+        #description p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* --- Contact Section --- */
+        #contact {
+            text-align: center;
+        }
+
+        #contact p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .contact-info {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            text-align: center;
+            padding: 20px;
+        }
+        
+        /* --- Lightbox Styles --- */
+        #lightbox {
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none; /* Hidden by default */
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+        }
+
+        #lightbox-img {
+            max-width: 85%;
+            max-height: 80%;
+            box-shadow: 0 0 35px rgba(0,0,0,0.5);
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0.5; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+            font-size: 45px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            padding: 10px;
+        }
+
+        .lightbox-nav:hover {
+            color: var(--secondary-color);
+        }
+
+        #prev-btn { left: 15px; }
+        #next-btn { right: 15px; }
+        
+        #lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        #lightbox-close:hover {
+            color: #bbb;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.2rem; }
+            h2 { font-size: 2rem; }
+            .price-banner { font-size: 1.5rem; }
+            .lightbox-nav { font-size: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Completely Renovated Single Family Home in Lake Pine</h1>
+            <p>217 Taunton Blvd, Medford, New Jersey 08055</p>
+        </div>
+    </header>
+
+    <div class="price-banner">
+        Asking Price: $525,000
+    </div>
+
+    <section id="description">
+        <div class="container">
+            <h2>Welcome Home</h2>
+            <p>
+                Experience modern living at its finest in this completely renovated Lake Pine home. Step inside to a bright, open-concept floor plan featuring a brand-new gourmet kitchen, stylishly updated bathrooms, and new high-end finishes throughout. Every surface and system has been thoughtfully redesigned for today's lifestyle.The luxury extends outdoors where you can enjoy serene lake views from your property. Even better, you are just a two-minute walk from direct lake access, perfect for swimming, kayaking, and fishing. This home offers the best of both worlds: the peace of a fully updated home in the vibrant Lake Pine community, combined with the convenience of Medford's shops, restaurants, and easy access to Philadelphia and the Jersey Shore. Don't miss this rare opportunity for turn-key living in a prime location.
+            </p>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="container">
+            <h2>Photo Gallery</h2>
+            <div class="gallery-grid">
+                <img src="https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Front exterior of the house">
+                <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Living room with fireplace">
+                <img src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Modern kitchen with island">
+                <img src="https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Spacious master bedroom">
+                <img src="https://images.pexels.com/photos/1329711/pexels-photo-1329711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Stylish master bathroom">
+                <img src="https://images.pexels.com/photos/210546/pexels-photo-210546.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Backyard patio and garden">
+            </div>
+        </div>
+    </section>
+
+    <section id="details-features" class="container">
+        <div class="details-features-wrapper">
+            <div class="details">
+                <h3 style="color:var(--primary-color);">Property Details</h3>
+                <ul>
+                    <li><strong>Bedrooms:</strong> 3</li>
+                    <li><strong>Bathrooms:</strong> 2.5</li>
+                    <li><strong>Square Footage:</strong> 1,830 sq. ft.</li>
+                    <li><strong>Lot Size:</strong> 0.25 Acres</li>
+                    <li><strong>Garage:</strong> 2-Car, Attached</li>
+                    <li><strong>Heating:</strong> Brand New Forced Air, Natural Gas</li>
+                    <li><strong>Cooling:</strong> Brand New Central Air</li>
+                    <li><strong>Taxes (2024):</strong> $6,058</li>
+                </ul>
+            </div>
+            <div class="features">
+                <h3 style="color:var(--primary-color);">Key Features</h3>
+                <ul>
+                    <li>Gourmet kitchen with granite countertops</li>
+                    <li>Hardwood floors throughout first floor</li>
+                    <li>Primary suite with dedicated bathroom</li>
+                    <li>Finished basement with entertainment area</li>
+                    <li>Backyard with hardscarped patio overlooking the lake</li>
+                    <li>Energy-efficient windows and appliances</li>
+                    <li>Located in a top-rated school district</li>
+                    <li>Close to local parks, shopping, and dining</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" style="background-color: var(--light-gray-bg);">
+        <div class="container">
+            <h2>Interested? Schedule a Private Showing!</h2>
+            <p>Showings are available by appointment only. Please contact us to schedule a visit.</p>
+            <p class="contact-info">Call or Text: [Your Name] at [Your Phone Number]</p>
+            <p class="contact-info">Email: rbdrental+217@gmail.com</p>
+            <br>
+            <a href="mailto:[rbdrental+217@gmail.com]?subject=Inquiry about [217 Taunton]" class="button">Email for More Information</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Carpenter Properties | Property Listing | Medford, NJ</p>
+    </footer>
+
+    <div id="lightbox">
+        <span id="lightbox-close">&times;</span>
+        <a id="prev-btn" class="lightbox-nav">&#10094;</a>
+        <img id="lightbox-img" src="" alt="Enlarged view">
+        <a id="next-btn" class="lightbox-nav">&#10095;</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const closeBtn = document.getElementById('lightbox-close');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+
+            const galleryImageElements = document.querySelectorAll('.gallery-grid img');
+            const galleryImages = Array.from(galleryImageElements).map(img => img.src);
+            let currentIndex = 0;
+
+            function showLightbox(index) {
+                currentIndex = index;
+                lightboxImg.src = galleryImages[currentIndex];
+                lightboxImg.style.animation = 'none'; // Reset animation
+                void lightboxImg.offsetWidth; // Trigger reflow to restart animation
+                lightboxImg.style.animation = 'fadeIn 0.5s';
+                lightbox.style.display = 'flex';
+            }
+
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+            }
+
+            function showNextImage() {
+                const nextIndex = (currentIndex + 1) % galleryImages.length;
+                showLightbox(nextIndex);
+            }
+
+            function showPrevImage() {
+                const prevIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+                showLightbox(prevIndex);
+            }
+
+            galleryImageElements.forEach((img, index) => {
+                img.addEventListener('click', () => showLightbox(index));
+            });
+
+            closeBtn.addEventListener('click', closeLightbox);
+            nextBtn.addEventListener('click', showNextImage);
+            prevBtn.addEventListener('click', showPrevImage);
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (lightbox.style.display === 'flex') {
+                    if (e.key === 'ArrowRight') {
+                        showNextImage();
+                    } else if (e.key === 'ArrowLeft') {
+                        showPrevImage();
+                    } else if (e.key === 'Escape') {
+                        closeLightbox();
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
